@@ -1,0 +1,18 @@
+ALGORITHM sum_dbl
+VAR
+    tab1 : ARRAY_OF INTEGER[100];
+    tab2 : ARRAY_OF INTEGER[100];
+    sum : INTEGER :=0;
+    i , j : INTEGER;
+BEGIN
+ Read(tab1);
+ Read(tab2);
+    FOR i FROM 0 TO tab1.length-1   DO
+        FOR j FROM 0 TO tab2.length-1   DO
+        IF(tab1[i]=tab2[j]) THEN
+        sum := sum + tab1[i]*2;
+        END_IF
+        END_FOR
+    END_FOR
+    Write(sum);
+END

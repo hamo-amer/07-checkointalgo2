@@ -1,0 +1,27 @@
+ALGORITHM sum_distinct
+VAR
+    tab1 : ARRAY_OF INTEGER[100] ;
+    tab2 : ARRAY_OF INTEGER[100] ;
+    i , j : INTEGER ;
+    sum : INTEGER :=0 ;
+BEGIN
+  Read(tab1);
+  Read(tab2);
+    FOR i FROM 0 TO tab1.length-1  DO
+        FOR j FROM 0 TO tab2 .length-1  DO
+            IF (tab1[i]<>tab2[j] AND j=tab2.length-1) THEN
+                sum := sum + tab1[i] ;
+            END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO tab2.length-1   DO
+        FOR i FROM 0 TO tab1.length-1  DO
+         IF (tab2[j]<>tab1[i] AND i=tab1.length) THEN
+             sum := sum + tab2[j] ;
+         END_IF
+        END_FOR
+    END_FOR
+
+    Write(sum);
+
+END

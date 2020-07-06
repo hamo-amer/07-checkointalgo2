@@ -1,0 +1,21 @@
+ALGORITHM sum_dbl
+VAR
+    htab : HASH_TABLE<INTEGER,INTEGER>
+    tab1 : ARRAY_OF INTEGER[100];
+    tab2 : ARRAY_OF INTEGER[100];
+    i : INTEGER;
+    sum : INTEGER :=0;
+BEGIN
+    Read(tab1);
+    Read(tab2);
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+        htab.insert(tab[i],1);
+    END_FOR
+    FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+        IF(htab.lookup(tab2[i]) = true) THEN
+        sum := sum + tab2[i]*2;
+        END_IF
+    END_FOR
+
+    Write(sum)
+END
